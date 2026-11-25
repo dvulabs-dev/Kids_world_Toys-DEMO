@@ -1,0 +1,32 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORT — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORT MUST NEVER BE DELETED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss';
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+@theme {
+  --font-display: 'Baloo 2', ui-rounded, system-ui, sans-serif;
+  --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+
+  --color-navy: #1a2b7c;
+  --color-navy-deep: #111d5c;
+  --color-royal: #2d48c9;
+  --color-pink: #e6337a;
+  --color-pink-soft: #fde7f0;
+  --color-sun: #ffcd29;
+  --color-sun-soft: #fff6d6;
+  --color-sky: #f1f6ff;
+  --color-sky-line: #dbe6fb;
+  --color-ink: #17204a;
+  --color-muted: #5b6488;
+  --color-whatsapp: #1fa855;
+
+  --ease-snap: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html, body, #root {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: #ffffff;
+}
