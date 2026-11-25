@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Blocks } from 'lucide-react'
 import type { Product } from '../types'
 import { BikeArt, JeepArt } from './RideOnArt'
 
@@ -46,7 +47,7 @@ export function ProductVisual({ product, className = '', eager = false }: Props)
     )
   }
 
-  const emoji = art?.kind === 'emoji' ? art : { emoji: '🧸', from: '#f1f6ff', to: '#dbe6fb' }
+  const emoji = art?.kind === 'emoji' ? art : { from: '#f8f1ff', to: '#dcc8f2' }
   return (
     <div
       className={`relative flex h-full w-full items-center justify-center overflow-hidden ${className}`}
@@ -56,9 +57,7 @@ export function ProductVisual({ product, className = '', eager = false }: Props)
     >
       <span className="absolute -top-6 -left-6 h-24 w-24 rounded-full bg-white/40" />
       <span className="absolute -right-8 -bottom-8 h-32 w-32 rounded-full bg-white/30" />
-      <span className="relative text-7xl drop-shadow-sm sm:text-8xl" aria-hidden>
-        {emoji.emoji}
-      </span>
+      <Blocks className="relative h-20 w-20 text-ink/70" aria-hidden />
     </div>
   )
 }

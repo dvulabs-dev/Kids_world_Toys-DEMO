@@ -5,6 +5,7 @@ import { Header } from './Header'
 import { Footer } from './Footer'
 import { WhatsAppFab } from './WhatsAppFab'
 import { CartToast } from './CartToast'
+import { MobileActionBar } from './MobileActionBar'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -16,7 +17,7 @@ function ScrollToTop() {
 
 export function Layout() {
   return (
-    <div className="flex min-h-dvh flex-col">
+    <div className="flex min-h-dvh flex-col pb-[4.75rem] lg:pb-0">
       <ScrollToTop />
       <a
         href="#main"
@@ -31,6 +32,7 @@ export function Layout() {
       </main>
       <Footer />
       <WhatsAppFab />
+      <MobileActionBar />
       <CartToast />
     </div>
   )

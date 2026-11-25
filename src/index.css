@@ -6,30 +6,30 @@
   --font-script: 'Fredoka', ui-rounded, system-ui, sans-serif;
 
   /* Kids World palette: cream paper, grape ink, toy-block primaries */
-  --color-navy: #2a1166;
-  --color-navy-deep: #1a0a43;
-  --color-royal: #6a3df0;
-  --color-pink: #d92b5c;
-  --color-pink-deep: #b01c46;
-  --color-pink-soft: #ffe0e8;
+  --color-navy: #5a1a94;
+  --color-navy-deep: #36105a;
+  --color-royal: #8a3fd1;
+  --color-pink: #d4147f;
+  --color-pink-deep: #a80e63;
+  --color-pink-soft: #ffe0f1;
   --color-sun: #ffc933;
   --color-sun-deep: #f2b100;
   --color-sun-soft: #fff0b8;
   --color-mint: #0b8f6d;
   --color-sky: #3bc4f2;
-  --color-sky-soft: #d9f4fd;
+  --color-sky-soft: #dff3fd;
   --color-lime: #8fd43a;
   --color-orange: #ff8a1f;
-  --color-mist: #fff6e5;
-  --color-mist-line: #e6d6b8;
-  --color-ink: #1e1038;
-  --color-muted: #5a4f73;
+  --color-mist: #f8f1ff;
+  --color-mist-line: #dcc8f2;
+  --color-ink: #25093d;
+  --color-muted: #5b4a75;
   --color-whatsapp: #178a45;
   --color-whatsapp-deep: #0f6e35;
 
-  --shadow-pop: 3px 3px 0 0 #1e1038;
-  --shadow-card: 4px 4px 0 0 #1e1038;
-  --shadow-lift: 6px 6px 0 0 #1e1038;
+  --shadow-pop: 3px 3px 0 0 #25093d;
+  --shadow-card: 4px 4px 0 0 #25093d;
+  --shadow-lift: 6px 6px 0 0 #25093d;
 
   --ease-snap: cubic-bezier(0.23, 1, 0.32, 1);
 
@@ -39,10 +39,15 @@
   --animate-marquee: marquee 38s linear infinite;
   --animate-pulse-ring: pulse-ring 2.2s ease-out infinite;
   --animate-spin-slow: spin 22s linear infinite;
+  --animate-swing: swing 3.2s ease-in-out infinite;
 
   @keyframes float {
     0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
     50% { transform: translateY(-12px) rotate(var(--r, 0deg)); }
+  }
+  @keyframes swing {
+    0%, 100% { transform: rotate(-7deg); }
+    50% { transform: rotate(7deg); }
   }
   @keyframes wiggle {
     0%, 100% { transform: rotate(-4deg); }
@@ -132,7 +137,7 @@
 
 @layer utilities {
   .dotted-bg {
-    background-image: radial-gradient(rgb(30 16 56 / 0.12) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgb(37 9 61 / 0.12) 1.5px, transparent 1.5px);
     background-size: 22px 22px;
   }
   .stripes-bg {
@@ -140,9 +145,43 @@
   }
   .grid-paper {
     background-image:
-      linear-gradient(rgb(30 16 56 / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(30 16 56 / 0.06) 1px, transparent 1px);
+      linear-gradient(rgb(37 9 61 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(37 9 61 / 0.06) 1px, transparent 1px);
     background-size: 32px 32px;
+  }
+  .sign-bg {
+    background-color: var(--color-navy);
+    background-image:
+      radial-gradient(rgb(255 255 255 / 0.10) 2px, transparent 2.5px),
+      radial-gradient(rgb(255 255 255 / 0.06) 2px, transparent 2.5px);
+    background-size: 36px 36px;
+    background-position: 0 0, 18px 18px;
+  }
+  .bubble-letter {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 0.95;
+    color: var(--c, #e8202f);
+    -webkit-text-stroke: 0.16em #fff;
+    paint-order: stroke fill;
+    text-shadow: 0 0.07em 0 rgb(37 9 61 / 0.35);
+    padding-inline: 0.02em;
+    cursor: default;
+    will-change: transform;
+  }
+  .bubble-letter::before {
+    content: '';
+    position: absolute;
+    top: 0.2em;
+    left: 0.17em;
+    width: 0.1em;
+    height: 0.24em;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.75);
+    transform: rotate(14deg);
+    -webkit-text-stroke: 0;
   }
   .sticker {
     @apply border-2 border-ink shadow-pop;

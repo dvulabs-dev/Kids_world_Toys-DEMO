@@ -9,7 +9,7 @@ export const STORE = {
   tagline: 'Where every child’s smile begins', // demo wording
 
   phones: [
-    { display: '074 295 0405', tel: '+94742950405', wa: '94742950405' }, // call & WhatsApp
+    { display: '074 295 0405', tel: '+94742950405', wa: '94742950405' }, // call & WhatsApp
   ],
 
   address: {
@@ -17,7 +17,7 @@ export const STORE = {
     full: 'Maharagama, Sri Lanka',
   },
   mapUrl:
-    'https://www.google.com/maps/search/?api=1&query=Asanka+Toys+Maharagama',
+    'https://www.google.com/maps/search/?api=1&query=Kids+World+Toys+Maharagama',
 
   onlineHours: 'Order online any time', // owner to confirm
   storeHours: 'Shop opening hours — please call to confirm', // owner to supply

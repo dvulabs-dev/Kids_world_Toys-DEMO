@@ -1,13 +1,20 @@
 import { Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Check, Info, MapPin, Phone } from 'lucide-react'
+import { Blocks, Check, Gift, Heart, Info, MapPin, PartyPopper, Phone, Sparkles, Star } from 'lucide-react'
 import { WhatsAppIcon } from '../components/WhatsAppIcon'
 import { STORE, waLink } from '../data/store'
 import { rs } from '../lib/format'
 import { loadOrder } from '../lib/orders'
 import { orderMessage, paymentLabel } from '../lib/whatsapp'
 
-const CONFETTI = ['🎈', '⭐', '🎉', '🧸', '🎀', '✨']
+const CONFETTI = [
+  { Icon: PartyPopper, color: 'text-pink' },
+  { Icon: Star, color: 'text-sun-deep' },
+  { Icon: Gift, color: 'text-royal' },
+  { Icon: Blocks, color: 'text-sky' },
+  { Icon: Heart, color: 'text-pink' },
+  { Icon: Sparkles, color: 'text-orange' },
+]
 
 export default function OrderConfirmation() {
   const order = loadOrder()
@@ -15,17 +22,17 @@ export default function OrderConfirmation() {
 
   return (
     <div className="container-x relative max-w-3xl py-12">
-      {CONFETTI.map((c, i) => (
+      {CONFETTI.map(({ Icon, color }, i) => (
         <motion.span
           key={i}
           aria-hidden
           initial={{ opacity: 0, y: 30, scale: 0.5 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.15 + i * 0.08, type: 'spring', stiffness: 160, damping: 12 }}
-          className="pointer-events-none absolute text-3xl sm:text-4xl"
+          className={`pointer-events-none absolute ${color}`}
           style={{ left: `${6 + i * 17}%`, top: i % 2 ? 6 : 34 }}
         >
-          {c}
+          <Icon size={36} />
         </motion.span>
       ))}
 

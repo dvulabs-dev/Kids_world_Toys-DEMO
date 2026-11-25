@@ -87,7 +87,7 @@ export function Header() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-40 border-b-2 border-ink bg-mist/95 backdrop-blur">
+    <header className="sticky top-0 z-40 sign-bg border-b-2 border-ink">
       <div className="container-x flex items-center gap-3 py-3 lg:gap-6">
         <Logo />
 
@@ -133,7 +133,7 @@ export function Header() {
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden border-t-2 border-ink bg-navy lg:block" aria-label="Main">
+      <nav className="hidden border-t-2 border-ink bg-navy-deep lg:block" aria-label="Main">
         <ul className="container-x flex items-center gap-1 py-1.5">
           {NAV.map((n) => (
             <li key={n.label}>

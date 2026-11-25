@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { ArrowRight, ShoppingBag, Trash2, Truck } from 'lucide-react'
+import { ArrowRight, ShoppingBag, ShoppingCart, Trash2, Truck } from 'lucide-react'
 import { ProductVisual } from '../components/ProductVisual'
 import { QuantityStepper } from '../components/QuantityStepper'
 import { WhatsAppIcon } from '../components/WhatsAppIcon'
@@ -16,7 +16,7 @@ export default function Cart() {
   if (lines.length === 0) {
     return (
       <div className="container-x py-20 text-center">
-        <span className="inline-flex h-28 w-28 items-center justify-center rounded-full bg-sun-soft text-6xl" aria-hidden>🛒</span>
+        <span className="inline-flex h-28 w-28 items-center justify-center rounded-full border-2 border-ink bg-sun shadow-card" aria-hidden><ShoppingCart size={52} className="text-ink" /></span>
         <h1 className="mt-5 text-4xl font-extrabold text-navy">Your cart is empty</h1>
         <p className="mx-auto mt-2 max-w-md text-muted">Looks like you haven’t picked any toys yet. Let’s find something that makes a little one smile!</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">

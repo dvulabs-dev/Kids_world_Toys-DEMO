@@ -5,7 +5,8 @@ import { waLink } from '../data/store'
 /** Floating WhatsApp button. Hidden on small screens at checkout so it never covers form controls. */
 export function WhatsAppFab() {
   const { pathname } = useLocation()
-  const hideOnMobile = pathname === '/checkout' || pathname === '/cart'
+  const hideOnMobile = true // phones use the bottom action bar instead
+  void pathname
   return (
     <a
       href={waLink('Hello Kids World Toys! I have a question.')}
@@ -13,7 +14,7 @@ export function WhatsAppFab() {
       rel="noreferrer"
       aria-label="Chat with Kids World Toys on WhatsApp"
       className={`group fixed right-4 bottom-4 z-50 items-center gap-2 rounded-full bg-whatsapp p-3.5 text-white shadow-lift transition hover:bg-whatsapp-deep sm:right-6 sm:bottom-6 ${
-        hideOnMobile ? 'hidden sm:flex' : 'flex'
+        hideOnMobile ? 'hidden lg:flex' : 'flex'
       } animate-pulse-ring`}
     >
       <WhatsAppIcon size={28} />

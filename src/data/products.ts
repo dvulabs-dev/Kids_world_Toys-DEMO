@@ -10,7 +10,7 @@ const jeepFeatures = [
   'Powerful rear motors',
   'Comfortable seat for little riders',
   'Strong, safe build with seat belt',
-  '3-month warranty',
+  'Warranty — ask the shop',
 ]
 
 const CATALOGUE: Product[] = [

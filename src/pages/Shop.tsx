@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { SlidersHorizontal, X } from 'lucide-react'
+import { CheckCircle2, SearchX, SlidersHorizontal, Tag, X } from 'lucide-react'
+import { AppIcon } from '../components/AppIcon'
 import { ProductCard } from '../components/ProductCard'
 import { WhatsAppIcon } from '../components/WhatsAppIcon'
 import { AGES, CATEGORIES, ageLabel, categoryName } from '../data/categories'
@@ -87,7 +88,7 @@ export default function Shop() {
         <Chip active={!category} onClick={() => set('category', null)}>All</Chip>
         {CATEGORIES.map((c) => (
           <Chip key={c.id} active={category === c.id} onClick={() => toggle('category', c.id)}>
-            <span aria-hidden>{c.emoji}</span> {c.name}
+            <AppIcon name={c.icon} size={16} /> {c.name}
           </Chip>
         ))}
       </FilterGroup>
@@ -106,8 +107,8 @@ export default function Shop() {
         ))}
       </FilterGroup>
       <FilterGroup title="More">
-        <Chip active={offers} onClick={() => set('offers', offers ? null : '1')}>🏷️ On offer</Chip>
-        <Chip active={available} onClick={() => set('avail', available ? null : '1')}>✅ Available now</Chip>
+        <Chip active={offers} onClick={() => set('offers', offers ? null : '1')}><Tag size={14} /> On offer</Chip>
+        <Chip active={available} onClick={() => set('avail', available ? null : '1')}><CheckCircle2 size={14} /> Available now</Chip>
       </FilterGroup>
     </div>
   )
@@ -181,14 +182,14 @@ export default function Shop() {
           )}
 
           {results.length > 0 ? (
-            <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:gap-5 xl:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-3 xl:grid-cols-3">
               {results.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
             </div>
           ) : (
             <div className="card flex flex-col items-center px-6 py-14 text-center">
-              <span className="text-6xl" aria-hidden>🔍</span>
+              <SearchX size={56} className="text-pink" aria-hidden />
               <h2 className="mt-3 text-2xl font-extrabold text-navy">No toys found</h2>
               <p className="mt-1 max-w-md text-muted">
                 Try removing a filter or searching for something else. Can’t find it? Ask us — we may have it in the shop.

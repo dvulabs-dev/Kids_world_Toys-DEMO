@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { Clock, Info, MapPin, Phone, Send } from 'lucide-react'
+import { Clock, Info, MailCheck, MapPin, Phone, Send } from 'lucide-react'
 import { PageBanner, ConfirmTag } from '../components/PageBanner'
 import { WhatsAppIcon } from '../components/WhatsAppIcon'
 import { STORE, waLink } from '../data/store'
@@ -91,7 +91,7 @@ export default function Contact() {
           <h2 className="text-2xl font-extrabold text-navy">Send us a message</h2>
           {done ? (
             <div className="mt-5 text-center">
-              <span className="text-6xl" aria-hidden>💌</span>
+              <span className="inline-flex h-20 w-20 items-center justify-center rounded-full border-2 border-ink bg-sun" aria-hidden><MailCheck size={40} /></span>
               <h3 className="mt-2 text-2xl font-extrabold text-navy">Thanks, {form.name.trim().split(' ')[0]}!</h3>
               <p className="mt-2 flex items-start gap-2 rounded-2xl bg-sun-soft p-3 text-left text-sm font-semibold text-navy">
                 <Info size={18} className="mt-0.5 shrink-0 text-amber-700" />

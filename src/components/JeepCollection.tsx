@@ -105,7 +105,7 @@ export function JeepCollection() {
           {JEEP_FEATURES.map((f) => {
             const Icon = ICONS[f.icon]
             return (
-              <li key={f.title} className="flex flex-col items-center rounded-2xl bg-white/10 p-4 text-center ring-1 ring-white/15 backdrop-blur-sm">
+              <li key={f.title} className="flex flex-col items-center last:odd:col-span-2 sm:last:odd:col-span-1 rounded-2xl bg-white/10 p-4 text-center ring-1 ring-white/15 backdrop-blur-sm">
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-sun text-navy-deep">
                   <Icon size={24} />
                 </span>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Check, Info, ShieldCheck, ShoppingCart, Truck } from 'lucide-react'
+import { Check, Info, ShieldCheck, ShoppingCart, Truck, Blocks } from 'lucide-react'
 import { ProductVisual } from '../components/ProductVisual'
 import { ProductCard, BADGE_STYLE, STOCK_STYLE } from '../components/ProductCard'
 import { QuantityStepper } from '../components/QuantityStepper'
@@ -23,7 +23,7 @@ export default function ProductDetails() {
   if (!product) {
     return (
       <div className="container-x py-24 text-center">
-        <span className="text-7xl" aria-hidden>🧸</span>
+        <Blocks size={72} className="mx-auto text-pink" aria-hidden />
         <h1 className="mt-4 text-4xl font-extrabold text-navy">We couldn’t find that toy</h1>
         <p className="mt-2 text-muted">It may have been moved or is no longer listed.</p>
         <Link to="/shop" className="btn-navy mt-6">Back to the shop</Link>
@@ -152,7 +152,7 @@ export default function ProductDetails() {
       {related.length > 0 && (
         <section className="container-x pt-8 pb-4">
           <SectionHeading eyebrow="You might also like" title="More from this category" linkTo={`/shop?category=${p.category}`} />
-          <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
             {related.map((r) => (
               <ProductCard key={r.id} product={r} />
             ))}
